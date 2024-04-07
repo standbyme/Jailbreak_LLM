@@ -111,7 +111,7 @@ def main():
         with open("./data/advbench.txt") as f:
             lines = f.readlines()[:100]
     else:
-        with open("./data/MaliciousInstruct.txt") as f:
+        with open("./data/RPAB.txt") as f:
             lines = f.readlines()
 
     # prepend sys prompt
