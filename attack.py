@@ -83,8 +83,8 @@ def main():
         fname += f"_sample_{args.n_sample}"
     if args.use_advbench:
         fname += "_advbench"
-    if not os.path.exists(f"outputs/{fname}"):
-        os.makedirs(f"outputs/{fname}")
+
+    os.makedirs(f"outputs/{fname}", exist_ok=True)
 
     if "falcon" in args.model or "mpt" in args.model:
         model = AutoModelForCausalLM.from_pretrained(
