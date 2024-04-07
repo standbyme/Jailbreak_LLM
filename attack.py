@@ -108,10 +108,10 @@ def main():
     logging.info(f"Model name: {fname}")
 
     if args.use_advbench:
-        with open("./data/advbench.txt") as f:
+        with open("../data/advbench.txt") as f:
             lines = f.readlines()[:100]
     else:
-        with open("./data/RPAB.txt") as f:
+        with open("../data/RPAB.txt") as f:
             lines = f.readlines()
 
     # prepend sys prompt
