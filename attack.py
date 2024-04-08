@@ -128,7 +128,7 @@ def main():
                 if "falcon" in args.model or "mpt" in args.model:
                     ground_truth_generation = model.generate(
                         tokenizer(sentence, return_tensors="pt").input_ids.to("cuda"),
-                        max_new_tokens=100,
+                        max_new_tokens=256,
                         do_sample=False,
                         num_return_sequences=1,
                     )
@@ -139,7 +139,7 @@ def main():
                     )
                     ground_truth_generation = model.generate(
                         inputs_embeds=ground_truth_embeds,
-                        max_new_tokens=100,
+                        max_new_tokens=256,
                         do_sample=False,
                         num_return_sequences=1,
                     )
@@ -166,7 +166,7 @@ def main():
                 if "falcon" in args.model or "mpt" in args.model:
                     ground_truth_generation = model.generate(
                         tokenizer(sentence, return_tensors="pt").input_ids.to("cuda"),
-                        max_new_tokens=100,
+                        max_new_tokens=256,
                         do_sample=True,
                         top_p=0.9,
                         temperature=0.1,
@@ -179,7 +179,7 @@ def main():
                     )
                     ground_truth_generation = model.generate(
                         inputs_embeds=ground_truth_embeds,
-                        max_new_tokens=100,
+                        max_new_tokens=256,
                         do_sample=True,
                         top_p=0.9,
                         temperature=0.1,
@@ -212,7 +212,7 @@ def main():
                             tokenizer(sentence, return_tensors="pt").input_ids.to(
                                 "cuda"
                             ),
-                            max_new_tokens=100,
+                            max_new_tokens=256,
                             temperature=temp,
                             do_sample=True,
                             num_return_sequences=args.n_sample,
@@ -224,7 +224,7 @@ def main():
                         )
                         ground_truth_generation = model.generate(
                             inputs_embeds=ground_truth_embeds,
-                            max_new_tokens=100,
+                            max_new_tokens=256,
                             temperature=temp,
                             do_sample=True,
                             num_return_sequences=args.n_sample,
@@ -257,7 +257,7 @@ def main():
                             tokenizer(sentence, return_tensors="pt").input_ids.to(
                                 "cuda"
                             ),
-                            max_new_tokens=100,
+                            max_new_tokens=256,
                             top_p=top_p,
                             do_sample=True,
                             num_return_sequences=args.n_sample,
@@ -269,7 +269,7 @@ def main():
 
                         ground_truth_generation = model.generate(
                             inputs_embeds=ground_truth_embeds,
-                            max_new_tokens=100,
+                            max_new_tokens=256,
                             top_p=top_p,
                             do_sample=True,
                             num_return_sequences=args.n_sample,
@@ -301,7 +301,7 @@ def main():
                             tokenizer(sentence, return_tensors="pt").input_ids.to(
                                 "cuda"
                             ),
-                            max_new_tokens=100,
+                            max_new_tokens=256,
                             top_k=top_k,
                             do_sample=True,
                             num_return_sequences=args.n_sample,
@@ -313,7 +313,7 @@ def main():
 
                         ground_truth_generation = model.generate(
                             inputs_embeds=ground_truth_embeds,
-                            max_new_tokens=100,
+                            max_new_tokens=256,
                             top_k=top_k,
                             do_sample=True,
                             num_return_sequences=args.n_sample,
